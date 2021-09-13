@@ -1,0 +1,53 @@
+public class cashregister {
+	/**
+	* A cash register totals up sales and computes change due.
+	*/
+	public static void main(String[] args) {
+		
+		/**
+		 * Instance variables go here
+		 */
+		private double purchase; //purchase (double) will be a total of all purchases made by the customer
+		private double  payment; //payment (double) will be the amount the customer is submitting to pay for purchases.
+
+
+		/**
+		* Constructs a cash register with no money in it.
+		*/
+public CashRegister() //parentheses when you call a method
+{
+	//cashregister (purchase, payment);
+	payment = 0; //this. helps you know what type of variable you should use
+	purchase = 0;
+}
+
+
+		/**
+		* Records the sale of an item.
+		* @param amount the price of the item
+		*/
+public void recordPurchase(double cost); //why do we use void? Is there any data you are sending back to calling program? We aren't returning any data so we call it void. 
+		//void methods cannot return a value
+purchase = purchase + cost;
+
+		/**
+		* Processes a payment received from the customer.
+		* @param amount the amount of the payment
+		*/
+
+public void receivePayment (double paymentreceived); //parentheses is what is coming in
+payment= payment+ paymentreceived;
+		/**
+		* Computes the change due and resets the machine for the next customer.
+		* @return the change due to the customer
+		*/
+public double giveChange (); //we are not taking anything in
+
+{
+	double change = purchase - payment;
+	payment = 0;//how do i reset my cash register back to 0?
+	purchase = 0;//how do i reset my cash register back to 0?
+	return change;
+	
+}
+}

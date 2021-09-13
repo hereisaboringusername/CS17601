@@ -1,0 +1,30 @@
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+public class cashregistertester {
+
+	public static void main(String[] args) {
+			Scanner scan = new Scanner(System.in);
+			String CashRegister = "";
+
+			while() {
+				JOptionPane.showInputDialog("Enter a purchase amount, or \"-1 \" to stop: ");
+				CashRegister = scan.nextLine();
+				if (CashRegister.toLowerCase().equals("-1")) {
+					
+					
+					JOptionPane.showMessageDialog(null, "Your change is: "
+							
+							
+				}
+				//if (bugs.getRoaches() = -1) {
+		 			//bugs.breed(); 
+		 			// null is just part of the JOptionPane.showMessageDialog that I have to
+		 			// memorize
+
+		 			//JOptionPane.showMessageDialog(null, "The Roach population after cycle " + cycle + " breeding is : "
+		 					+ wholeFormat.format(bugs.getRoaches()));
+		 		//	String spray = JOptionPane.showInputDialog("Enter spray percentage for cycle " + cycle + " ");
+		 		//	double sprayPct = Double.parseDouble(spray);
+		 		//	bugs.spray(sprayPct);
+		 			
+}

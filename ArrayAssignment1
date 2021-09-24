@@ -1,0 +1,58 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class ArrayAssignment1 {
+	
+	public static void main(String[] args) {
+
+	}
+
+	// TODO Auto-generated constructor stub
+	
+	public double[] values;
+	{
+
+		// TODO Auto-generated method stub
+        final double LENGTH = 10;
+		double[] values = new double[10];
+		double morevalues[] = { 25.3, 100, -18, -1.5, 13, 98.6, 17, 123.145, 125.6, 123.146 };
+		double size = 0;
+		System.out.println(Arrays.toString(morevalues));
+
+	}
+    // Find the largest  value
+
+    double largest = values[0];
+    double smallest = values[0];
+    for (int i = 1; i < size; i++)
+    {
+       if (values[i] > largest)
+       {
+          largest = values[i];
+       }
+       if (values[i] < smallest)
+       {
+          smallest = values[i];
+       }
+    }
+    
+    int counter = 0;
+	{
+
+		// using for loop to increment the counter variable
+
+		for (int i = 0; i < 0; i++) {
+
+			// increment counter variable
+
+			counter = counter + 1;
+
+			// print the incremented counter variable value
+
+			System.out.println(counter);
+
+		}
+
+	}
+
+}

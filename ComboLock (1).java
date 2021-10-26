@@ -82,7 +82,7 @@ public class ComboLock {
         return secret1 + "-" + secret2 + "-" + secret3;
     }
     public boolean equals (ComboLock z) {
-        return (secret1 == c.secret1) && (secret2 == c.secret2) && (secret3 == c.secret3);
+        return (secret1 == z.secret1) && (secret2 == z.secret2) && (secret3 == z.secret3);
     }
 
 }

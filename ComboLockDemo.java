@@ -48,7 +48,7 @@ public class ComboLockDemo {
 			}
 		}
 		
-		break;
+		return;
 	}
 
 }

@@ -1,37 +1,55 @@
-//Put your instance variables here.
+public class CheckingAccount extends BankAccount {
+	
+	
+	//Put your instance variables here.
 	private int withdrawCount;
-	
-	
+
+
 	//Then, put your classes here. 
 	public CheckingAccount() 
 	{
-		
+
 		// TODO Auto-generated constructor stub
-				/**
+		/**
 				Add an instance variable below that keeps track of the number of withdrawals each month
-				 */   
-				
-				// Constructs a checking account with a zero balance. Set withdrawals to 0 as well
-				CheckingAccount account = new CheckingAccount();
-				withdrawCount = 0;
+		 */   
+
+		// Constructs a checking account with a zero balance. Set withdrawals to 0 as well
+		CheckingAccount account = new CheckingAccount();
+		withdrawCount = 0;
 	}
-		
-			
+
+
 	/**
-		      Add code below. If more than 1 withdrawal in month. Withdraw an extra 20 from BankAccount balance
+		      Add code below. If more than 1 withdrawal in month. 
+		      Withdraw an extra 20 from BankAccount balance
 	 */
-	public void withdraw(double amount, double withdrawCount, double balance) {
+	public void withdraw(double amount) {
+
 		super.withdraw(amount);
-		{
-			if (withdrawCount > 1) {
-				balance = balance - 20;
-				amount = balance;
-			}
-			else {
-				super.monthEnd();
-			}
-			
-		}				
+		withdrawCount++;
+		if (withdrawCount > 1) {
+			super.withdraw(20);
+		}
+
+	}				
+
+
+	/**
+		      Add code to End of month procedure to reset number of withdrawals to 0 
+	 */
+	public void monthEnd() {
+		withdrawCount = 0;
+	}
+	
+	public double getBalance() {
+		return super.getBalance();
+	}
+
+
+
+
+}	
 
 			}
 

@@ -43,7 +43,7 @@ public class ComboLock {
         if (count == 0) {
             number1 = this.d;
         }
-        if ( == 2) {
+        if ( count == 2) {
             number3 = this.d;
         }
         count++;

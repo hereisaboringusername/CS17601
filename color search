@@ -1,77 +1,68 @@
-*
-Online Java - IDE, Code Editor, Compiler
-
-Online Java is a quick and easy tool that helps you to build, compile, test your programs online.
-*/
-import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.ArrayList;
+
 
 public class ColorSearch {
-	// TODO Auto-generated constructor stub
 
-	// 1. Create a class called ColorSearch
+	 Scanner scan = new Scanner(System.in);
+	 ArrayList<String> colors = new ArrayList<String>();	
 
-
-	//Add String Sentinal Value
-	
-	String SENTINAL = "Q";	
-
-	// 2. Create an arraylist named Colors
-	public static void main(String[] args) {
-	Scanner in = new Scanner(System.in);
-
-		ArrayList<String> colors = new ArrayList<String>();
-//Use a while loop to accept all the colors from the scanner to replace code below.
-
+	public  void SearchColor(String searchc){
+		for(int color = 0; color<colors.size(); color ++) {
+			// check for color
+			if (searchc.toLowerCase().equals(colors.get(color))) {
+				System.out.println("The color " + searchc.toLowerCase() + " was found after " + (color+1) + " searches.");
+				return;
+			}
+		}
+		System.out.println("The color " + searchc.toLowerCase() + " was not found after " + colors.size() + " searches.");
 	}
-//Use another while loop here to have the user input the color they want to search for using the scanner. if they enter the sentinel value, the program ends.
-//Once you have the searchcolor call the Csearch method below and send it the colors array and the searchcolor.  It should return the number of searches. Return 0 if the color was not found. You don't need a binary search. 
 
-while(true)
-{
-	System.out.println("Enter a color or 'Q' to quit: ");
-	String color = in.nextLine();
-	if(color.equals(SENTINAL))
-	{
-		break;
-	}
-	else
-	{
-		colors.add(color);
+
+		ColorSearch search = new ColorSearch();
+		String colorvalue = "";
+		String  quit  = "q";
+		boolean loop = true; {
+
+		
+		for (!colorvalue.toLowerCase().equals(quit)) {
+			// First loop check
+			if (loop) {
+				loop = false;
+			}
+			else {
+				colors.add(colorvalue);
+			}
+			// Input color
+			System.out.print("Enter a color to add to the list or press \"q\" to quit (non case-sensitive): ");
+			colorvalue = scan.nextLine().toLowerCase();
+		}
+
+		// Reset variables
+		loop = true;
+		colorvalue = "";
+
+
+		// Search for predetermined colors
+		System.out.println();
+		search.SearchColor("violet");
+		search.SearchColor("green");
+		search.SearchColor("yellow");
+		search.SearchColor("teal");
+
+		// SearchColor loop
+		while(!colorvalue.toLowerCase().equals(quit)) {
+			// First loop check
+			if (loop) {
+				loop = !true; //false
+			}
+			else  {
+				search.SearchColor(colorvalue);
+			}
+			// Input color
+			System.out.print("Enter a color to search for or \"q\" to quit (non case-sensitive): ");
+			colorvalue = scan.nextLine().toLowerCase();
+		}
+		System.out.println("Goodbye.");
 	}
 }
-
-while(true)
-{
-	System.out.println("Enter a color to search for, or ‘Q’ to quit: ");
-	String searchcolor = in.nextLine();
-	if(searchcolor.equals(SENTINAL))
-	{
-		break;
-	}
-	else
-	{
-	cSearch(colors, searchcolor);
-	}
-	
-	}
-}
-public static void  cSearch(String arr[], String clr) 
-{
-	int numsearches = 0;
-	boolean found = false;
-
-for(String colS : arr)
-{
-	numsearches++;
-	if(colS.equals(clr))
-	{
-		found = true;
-		break;
-	}
-}
-
-if(found)
-
-{
-	System.out.println("The color " + clr + " was found after " + searches + " searche(s)");

@@ -7,6 +7,8 @@ public class TheatreSeating{
 	private final int COLS = 10;
 	private int [][] seats = new int[ROWS][COLS];
 	private static int seatPrice;
+	private static int seatRow;
+	private static int seatCol;
 
 	public TheatreSeating() {
 
@@ -78,6 +80,8 @@ public class TheatreSeating{
 		col = col - 1;
 		if (seats[row][col] != 0) { // the seat is not available
 			seatPrice = seats[row][col]; // save seat price
+			seatRow = row + 1;
+			seatCol = col + 1;
 			seats[row][col] = 0; // seat sold
 
 			return seatPrice;
@@ -104,6 +108,8 @@ public class TheatreSeating{
 				//seatNumber++; // absolute seat number
 				if(seats[i][j] == price) {
 					seatPrice = price;
+					seatRow = i + 1;
+					seatCol = j + 1;
 					seats[i][j] = 0; // seat sold
 					return price; // immediately exit with seatNumber
 				}
@@ -153,7 +159,7 @@ public class TheatreSeating{
 
 				else 
 				{
-					System.out.println("That seat is available, and you have purchased it for : " + seatPrice );
+					System.out.println("The seat is available, and you have purchased it for: " + seatPrice);
 					theVic.showSeats();
 				}	
 
@@ -170,7 +176,8 @@ public class TheatreSeating{
 				}
 				else 
 				{
-					System.out.println("That seat is available, and you have purchased it for: " + seatPrice);
+					System.out.println("You have bought the seat at row: " + seatRow + ", column: " + seatCol);
+					
 					theVic.showSeats();
 				}
 			}
@@ -180,5 +187,7 @@ public class TheatreSeating{
 		}
 	}
 }
+
+
 
 

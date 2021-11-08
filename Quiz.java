@@ -2,10 +2,10 @@
 public class Quiz implements Measurable 
 	{
 	  
-	   private double score;
+	   private int score;
 
 	 
-   public Quiz ( double score)
+   public Quiz ( int score)
 	   {
 	    
 	      this.score = score;
@@ -20,5 +20,4 @@ public class Quiz implements Measurable
 	      return score;
 	   }
 	}
-
 
